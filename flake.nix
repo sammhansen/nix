@@ -7,7 +7,7 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland?rev=d26439a0fe5594fb26d5a3c01571f9490a9a2d2c&submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix.url = "github:danth/stylix";
@@ -37,13 +37,12 @@
     ngrok.url = "github:ngrok/ngrok-nix";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ags = {
-      url = "github:whoslucifer/ags?rev=05e0f23534fa30c1db2a142664ee8f71e38db260";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:Aylur/ags";
     };
 
     more-waita = {
@@ -93,12 +92,14 @@
         modules = [
           ./hosts/nix/config.nix
 
-          {  
+          {
             nixpkgs.config = {
               allowUnfree = true;
               # allowBroken = true;
             };
           }
+
+          stylix.nixosModules.stylix
 
           inputs.distro-grub-themes.nixosModules.${system}.default
 
@@ -112,21 +113,22 @@
           {
             _module.args.pkgs-stable = pkgs-stable;
           }
-        ];
-      };
-    };
 
-    homeConfigurations = {
-      "${username}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs-stable;
-        extraSpecialArgs = {
-          inherit inputs;
-        };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              # useGlobalPkgs = true;
+              useUserPackages = true;
+              users."${username}" = import ./home.nix;
+              backupFileExtension = "backup";
 
-        modules = [
-          ./home.nix
-
-          stylix.homeManagerModules.stylix
+              extraSpecialArgs = {
+                inherit pkgs;
+                inherit inputs;
+                inherit username;
+              };
+            };
+          }
         ];
       };
     };
