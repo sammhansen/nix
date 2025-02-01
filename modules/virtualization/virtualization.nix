@@ -22,11 +22,18 @@
     };
   };
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama;
+    # acceleration = "cuda";
+  };
+
   environment.systemPackages = with pkgs; [
     bottles
     wine
     vulkan-tools
     distrobox
     boxbuddy
+    genymotion
   ];
 }
