@@ -27,6 +27,13 @@
     VISUAL = "nvim";
   };
 
+  services = {
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
+  };
+
   programs.home-manager.enable = true;
 
   home.stateVersion = "24.11";
