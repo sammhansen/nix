@@ -1,15 +1,9 @@
 {...}: {
   imports = [
-    #./ags.nix
+    ./desktop/default.nix
+    ./terminal/default.nix
+    ./dev/default.nix
 
-    #./shell.nix
-    #./tmux.nix
-    #./wezterm.nix
-    #./neovim.nix
-
-    #./stylix.nix
-    #./xdg.nix
-    #./theme.nix
-    #./packages.nix
+    ./user/default.nix
   ];
 }
