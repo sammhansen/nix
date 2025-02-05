@@ -10,16 +10,13 @@
   home.username = "asherah";
   home.homeDirectory = "/home/asherah";
 
-  home.packages = let
-    nerdfonts = pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    };
-  in [nerdfonts];
-
   home.file = {
   };
+
+  home.packages = with pkgs; [
+    uwsm
+    networkmanagerapplet
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -30,18 +27,7 @@
     VISUAL = "nvim";
   };
 
-  /*
-    services.gammastep = {
-    enable = true;
-    dawnTime = "08:00";
-    duskTime = "08:00";
-  };
-  */
-
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  #home.enableNixpkgsReleaseCheck = false;
 
   home.stateVersion = "24.11";
 }

@@ -16,10 +16,10 @@ require("lazy").setup({
     lazy = false,
     version = false, -- always use the latest git commit
   },
-  install = { colorscheme = {"solarized-osaka", "habamax" } },
+  install = { colorscheme = { "solarized-osaka", "habamax" } },
   checker = {
-    enabled = true,
-    notify = true,
+    enabled = false,
+    notify = false,
   },
   performance = {
     rtp = {

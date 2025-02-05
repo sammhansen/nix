@@ -12,11 +12,6 @@
 
     stylix.url = "github:danth/stylix";
 
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       # inputs.nixpkgs.follows = "hyprland";
@@ -31,11 +26,6 @@
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
 
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    ngrok.url = "github:ngrok/ngrok-nix";
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,20 +34,12 @@
     ags = {
       url = "github:Aylur/ags";
     };
-
-    more-waita = {
-      url = "github:somepaulo/MoreWaita";
-      flake = false;
-    };
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixpkgs-stable,
-    nix-index-database,
     stylix,
-    ngrok,
     home-manager,
     ...
   } @ inputs: let
@@ -90,7 +72,7 @@
         };
 
         modules = [
-          ./hosts/nix/config.nix
+          ./hosts/t460s/config.nix
 
           {
             nixpkgs.config = {
@@ -102,12 +84,6 @@
           stylix.nixosModules.stylix
 
           inputs.distro-grub-themes.nixosModules.${system}.default
-
-          nix-index-database.nixosModules.nix-index
-          # optional to also wrap and install comma
-          # { programs.nix-index-database.comma.enable = true; }
-
-          ngrok.nixosModules.ngrok
 
           # Make pkgs-stable available as a special argument for modules
           {
