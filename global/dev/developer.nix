@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     clang
     cmake
@@ -24,10 +19,11 @@
     android-studio-tools
     gradle
 
+    jetbrains.pycharm-community
+    spyder
+
     nodejs
     yarn
     csslint
-
-    #waydroid
   ];
 }

@@ -33,6 +33,7 @@ in {
 
   "del" = "gio trash";
   "dev" = "nix develop -c nvim";
+  "nd" = "nix develop";
 
   ns = "sudo nixos-rebuild switch --flake .#nix";
   hs = "home-manager switch -b backup --flake .#asherah";

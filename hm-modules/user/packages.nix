@@ -10,9 +10,14 @@
 
     brightnessctl
     cliphist
+    wl-clipboard
     pavucontrol
     playerctl
     hyprshot
+
+    #screenrecord script
+    slurp
+    wf-recorder
 
     btop
     carapace
@@ -38,6 +43,7 @@
     vesktop
     irssi
     weechat
+    freetube
 
     (mpv.override {scripts = [mpvScripts.mpris];})
 
