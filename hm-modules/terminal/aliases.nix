@@ -34,9 +34,9 @@ in {
   "del" = "gio trash";
   "dev" = "nix develop -c nvim";
   "nd" = "nix develop";
+  "nsh" = "nix-shell shell.nix";
 
-  ns = "sudo nixos-rebuild switch --flake .#nix";
-  hs = "home-manager switch -b backup --flake .#asherah";
+  "ns" = "sudo nixos-rebuild switch --flake .#atlantis";
   nixos-gens = "sudo nix-env --list-generations --profile ${nixprofile_path}";
   nixos-gens-rm = "sudo nix-env --profile ${nixprofile_path} --delete-generations";
 
