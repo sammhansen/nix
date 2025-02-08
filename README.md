@@ -9,6 +9,8 @@
 
 > [!NOTE]
 > - unstable ... everything is subject to change
+> - HOST : Lenovo ThinkPad t460s
+> - GPU: SkyLake Intel HD Graphics 520
 
 <details>
   <summary>Preview</summary>
