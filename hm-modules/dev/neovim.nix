@@ -10,9 +10,11 @@ in {
     withRuby = true;
 
     extraPackages = with pkgs; [
+      gnumake
+      fd
+
       alejandra
       black
-      gnumake
       golangci-lint
       gopls
       gotools
