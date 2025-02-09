@@ -27,8 +27,6 @@
         cliphist decode |
         wl-copy
   '';
-
-  terminal = "kitty";
 in {
   services.hyprpaper = {
     enable = true;
@@ -37,7 +35,7 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
     systemd = {
       enable = true;
       variables = ["--all"];
@@ -70,7 +68,7 @@ in {
         "uwsm app -- nm-applet &"
         "uwsm app -- wl-paste --type text --watch cliphist store &"
         "uwsm app -- wl-paste --type image --watch cliphist store &"
-        "uwsm app -- vesktop &"
+        "uwsm app -- discord &"
       ];
       general = {
         gaps_in = 4;
@@ -262,6 +260,7 @@ in {
         "Alt, P, exec, ags -t notification-center"
         "SUPER, W, exec, ags -t wallpapers"
         "ALT, M, exec, ags -t mpris-player-window"
+        "SUPER+Ctrl, R, exec, pkill gjs ydotool && ags run &"
 
         # Rofi
         "SUPER, A , exec,  rofi -show drun -show-icons -run-command 'uwsm app -- {cmd}' -theme ~/.config/rofi/themes/default.rasi"
@@ -310,7 +309,7 @@ in {
 
       windowrule = [
         "noblur,.*" # Disables blur for windows. Substantially improves performance.
-        "opacity 0.89 override 0.93 override, .*" # Applies transparency to EVERY WINDOW
+        # "opacity 0.89 override 0.93 override, .*" # Applies transparency to EVERY WINDOW
         "float, ^(steam)$"
         "float, polkit-gnome-authentication-agent-1"
         "size 300 300, polkit-gnome-authentication-agent-1"
