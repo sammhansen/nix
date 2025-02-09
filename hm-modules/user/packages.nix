@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     ghostty
     git
+    gh-dash
     jq
 
     nix-prefetch-git
@@ -40,10 +41,20 @@
     spotdl
 
     telegram-desktop
-    vesktop
+    discord
+    element-desktop
+    wasistlos
     irssi
+    chromium
     weechat
     freetube
+    twitch-hls-client
+
+    chess-tui
+
+    alacritty
+    foot
+    anyrun
 
     (mpv.override {scripts = [mpvScripts.mpris];})
 
