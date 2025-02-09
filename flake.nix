@@ -44,8 +44,8 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    host = "nix";
-    username = "asherah";
+    host = "atlantis";
+    username = "lilith";
 
     pkgs = import nixpkgs {
       inherit system;
