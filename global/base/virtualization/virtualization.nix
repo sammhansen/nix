@@ -29,6 +29,5 @@
     # wine
     # vulkan-tools
     distrobox
-    genymotion
   ];
 }
