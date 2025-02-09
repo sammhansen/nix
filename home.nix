@@ -7,8 +7,8 @@
     ./hm-modules/default.nix
   ];
 
-  home.username = "asherah";
-  home.homeDirectory = "/home/asherah";
+  home.username = "lilith";
+  home.homeDirectory = "/home/lilith";
 
   home.file = {
   };
@@ -27,12 +27,12 @@
     VISUAL = "nvim";
   };
 
-  services = {
-    kdeconnect = {
-      enable = true;
-      indicator = true;
-    };
-  };
+  # services = {
+  # kdeconnect = {
+  # enable = true;
+  # indicator = true;
+  # };
+  # };
 
   programs.home-manager.enable = true;
 
