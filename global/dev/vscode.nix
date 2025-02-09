@@ -37,9 +37,10 @@
 
           ## PYTHON
           ms-python.python
+          ms-toolsai.jupyter
 
           ## RUST
-          serayuzgur.crates
+          fill-labs.dependi
           rust-lang.rust-analyzer
 
           ## GO
