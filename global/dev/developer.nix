@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     clang
     cmake
+    gnumake
     go
     gcc
 
