@@ -8,12 +8,14 @@ in {
   la = "ls -la";
   l = "ls";
   pk = "pkill";
+  "tk" = "tmux kill-server";
 
   lf = "yazi";
 
-  nvide = "neovide";
   lg = "lazygit";
   v = "nvim";
+
+  "xcb" = "export QT_QPA_PLATFORM=xcb";
 
   db = "distrobox";
   kali = "distrobox enter kalignome -- /snap/bin/nu";
