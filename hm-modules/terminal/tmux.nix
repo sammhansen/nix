@@ -116,7 +116,7 @@ in {
     escapeTime = 0;
     keyMode = "vi";
     mouse = true;
-    shell = "${pkgs.fish}/bin/fish";
+    shell = "${pkgs.nushell}/bin/nushell";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       bind c copy-mode
