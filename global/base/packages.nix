@@ -2,8 +2,6 @@
   environment.systemPackages = with pkgs;
   with nodePackages_latest;
   with libsForQt5; [
-    gnumake
-
     d-spy
     icon-library
     dconf-editor
