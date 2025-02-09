@@ -11,11 +11,11 @@
     "tree" = "eza --tree";
     "v" = "nvim";
     "cat" = "bat";
-    "ns" = "sudo nixos-rebuild switch --flake .#nix";
-    "hs" = "home-manager switch -b backup --flake .#asherah";
+    "ns" = "sudo nixos-rebuild switch --flake .#atlantis";
 
     "la" = "ls -la";
     "l" = "ls";
+    "tk" = "tmux kill-server";
 
     ":q" = "exit";
     "q" = "exit";
@@ -35,6 +35,8 @@
 
     "del" = "gio trash";
     "dev" = "nix develop -c nvim";
+    "nd" = "nix develop";
+    "nsh" = "nix-shell shell.nix";
   };
 
   base64fileBash = ''
