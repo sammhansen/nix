@@ -6,7 +6,6 @@
   setuptools,
   wheel,
   poetry-core,
-  poetry,
 }:
 python311Packages.buildPythonApplication rec {
   pname = "senpwai";
@@ -22,7 +21,6 @@ python311Packages.buildPythonApplication rec {
     setuptools
     wheel
     poetry-core
-    poetry
   ];
 
   nativeBuildInputs = [
@@ -40,6 +38,7 @@ python311Packages.buildPythonApplication rec {
       anitopy
       beautifulsoup4 #bs4
       configargparse #argparse
+      argparse
       appdirs
       tqdm
       pylnk3
