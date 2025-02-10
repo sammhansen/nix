@@ -69,6 +69,7 @@ in {
         "uwsm app -- wl-paste --type text --watch cliphist store &"
         "uwsm app -- wl-paste --type image --watch cliphist store &"
         "uwsm app -- discord &"
+        "uwsm app -- hyprshade on blue-light-filter"
       ];
       general = {
         gaps_in = 4;
