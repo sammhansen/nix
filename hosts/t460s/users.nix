@@ -10,6 +10,7 @@ in {
       homeMode = "755";
       isNormalUser = true;
       description = "${gitUsername}";
+      shell = pkgs.nushell;
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -39,6 +40,11 @@ in {
 
     defaultUserShell = pkgs.nushell;
   };
+
+  environment.shells = with pkgs; [
+    fish
+    nushell
+  ];
 
   programs.fish.enable = true;
 }
