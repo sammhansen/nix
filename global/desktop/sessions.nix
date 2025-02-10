@@ -1,6 +1,12 @@
 {pkgs, ...}: {
   services = {
-    xserver.desktopManager.gnome.enable = true;
+    xserver = {
+      desktopManager = {
+        gnome = {
+          enable = true;
+        };
+      };
+    };
   };
 
   nix.settings = {
@@ -11,27 +17,47 @@
   };
 
   programs = {
+    niri = {
+      enable = false;
+    };
+
     hyprland = {
       enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
       withUWSM = true;
       xwayland.enable = true;
     };
-    nm-applet.indicator = true;
+    nm-applet.indicator = false;
   };
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal
-    ];
     configPackages = with pkgs; [
+      xdg-desktop-portal
       xdg-desktop-portal-hyprland
     ];
   };
+  # xdg.portal = {
+  # enable = true;
+  # wlr.enable = true;
+  # extraPortals = with pkgs; [
+  # xdg-desktop-portal-gtk
+  # xdg-desktop-portal
+  # ];
+  # configPackages = with pkgs; [
+  # xdg-desktop-portal-hyprland
+  # xdg-desktop-portal
+  # ];
+  # };
 
   environment.systemPackages = with pkgs; [
-    xwayland
+    # xwayland
+    xwayland-satellite
+    wlsunset
+    vesktop
+    hyprpaper
+    wev
+    xorg.xev
+    swww
   ];
 }
