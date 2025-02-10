@@ -34,6 +34,18 @@
     ags = {
       url = "github:Aylur/ags";
     };
+
+    cosmic = {
+      type = "github";
+      owner = "lilyinstarlight";
+      repo = "nixos-cosmic";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "";
+        flake-compat.follows = "";
+      };
+    };
   };
 
   outputs = {
@@ -72,7 +84,7 @@
         };
 
         modules = [
-          ./hosts/t460s/config.nix
+          ./nodes/orion/config.nix
 
           {
             nixpkgs.config = {
@@ -95,7 +107,7 @@
             home-manager = {
               # useGlobalPkgs = true;
               useUserPackages = true;
-              users."${username}" = import ./home.nix;
+              users."${username}" = import ./home/home.nix;
               backupFileExtension = "backup";
 
               extraSpecialArgs = {
