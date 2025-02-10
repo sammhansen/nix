@@ -10,9 +10,9 @@
     };
 
     displayManager = {
-      sessionPackages = [
-        pkgs.hyprland
-      ];
+      # sessionPackages = [
+      # pkgs.hyprland
+      # ];
       sddm.enable = true;
       sddm.theme = "${import ./sddmtheme.nix {inherit pkgs;}}";
     };
