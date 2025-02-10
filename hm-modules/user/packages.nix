@@ -21,6 +21,7 @@
     wf-recorder
 
     btop
+    eza
     carapace
     zoxide
     delta
@@ -43,18 +44,11 @@
     telegram-desktop
     discord
     element-desktop
-    wasistlos
     irssi
     chromium
-    weechat
-    freetube
-    twitch-hls-client
 
     chess-tui
-
-    alacritty
-    foot
-    anyrun
+    youtube-music
 
     (mpv.override {scripts = [mpvScripts.mpris];})
 
