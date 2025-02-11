@@ -48,7 +48,7 @@
       denoland.vscode-deno
 
       ### PHP
-      devsense.phptools-vscode
+      # devsense.phptools-vscode
 
       ### MARKDOWN
       shd101wyy.markdown-preview-enhanced

@@ -6,6 +6,10 @@
     polarity = "dark";
     opacity.terminal = 0.8;
 
+    targets = {
+      chromium.enable = true;
+    };
+
     fonts = {
       serif = {
         package = pkgs.nerd-fonts.space-mono;

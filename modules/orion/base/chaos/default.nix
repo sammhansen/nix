@@ -1,4 +1,4 @@
-{...}: {
+{
   imports = [
     ./broken.nix
     ./insecure.nix

@@ -6,4 +6,8 @@
       xdg-desktop-portal-hyprland
     ];
   };
+
+  security.rtkit = {
+    enable = true;
+  };
 }

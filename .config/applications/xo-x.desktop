@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=X
-Exec=google-chrome-stable --profile-directory=Default --app=https://x.com
-Icon=/home/asherah/.local/share/applications/icons/x.png
+Exec=chromium --profile-directory=Default --app=https://x.com
+Icon=/home/lilith/.local/share/applications/icons/x.png
 
 Actions=Direct-Messages;Explore;New-post;Notifications

@@ -3,33 +3,33 @@
   pkgs,
   config,
   ...
-}:
-with lib; let
-  cfg = config.drivers.intel;
-in {
-  options.drivers.intel = {
-    enable = mkEnableOption "Enable Intel Graphics Drivers";
+}: {
+  services.xserver.videoDrivers = ["modesetting"];
+  hardware.cpu.intel.updateMicrocode = true;
+  hardware.enableRedistributableFirmware = true;
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   };
 
-  config = mkIf cfg.enable {
-    services.xserver.videoDrivers = ["modesetting"];
-    hardware.cpu.intel.updateMicrocode = true;
-    hardware.enableRedistributableFirmware = true;
-
-    hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        # intel-ocl
-        # vaapiIntel
-        # vaapiVdpau
-        # libvdpau-va-gl
-        #intel-media-driver
-        mesa.opencl
-        mesa
-        libGL
-        libGLU
-        vpl-gpu-rt
-      ];
-    };
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      # intel-ocl
+      # vaapiIntel
+      # vaapiVdpau
+      # libvdpau-va-gl
+      intel-media-driver
+      intel-vaapi-driver
+      libvdpau-va-gl
+      # mesa.opencl
+      # mesa
+      # libGL
+      # libGLU
+      intel-media-sdk
+      # vpl-gpu-rt
+    ];
   };
+
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
 }
