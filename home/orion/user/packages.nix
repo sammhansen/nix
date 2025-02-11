@@ -45,7 +45,6 @@
     discord
     element-desktop
     irssi
-    chromium
 
     chess-tui
     youtube-music
