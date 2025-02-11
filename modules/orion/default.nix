@@ -8,5 +8,6 @@
     ./security/default.nix
     ./services/default.nix
     ./user/default.nix
+    ./nix.nix
   ];
 }
