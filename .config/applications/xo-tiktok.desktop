@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=TikTok
-Exec=google-chrome-stable --profile-directory=Default --app=https://tiktok.com
-Icon=/home/asherah/.local/share/applications/icons/tiktok.png
+Exec=chromium --profile-directory=Default --app=https://tiktok.com
+Icon=/home/lilith/.local/share/applications/icons/tiktok.png
 

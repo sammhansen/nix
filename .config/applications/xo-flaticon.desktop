@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Flaticon
-Exec=google-chrome-stable --profile-directory=Default --app=https://www.flaticon.com
-Icon=/home/asherah/.local/share/applications/icons/flaticon.png
+Exec=chromium --profile-directory=Default --app=https://www.flaticon.com
+Icon=/home/lilith/.local/share/applications/icons/flaticon.png
 

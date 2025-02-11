@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=WhatsApp
-Exec=google-chrome-stable --profile-directory=Default --app=https://web.whatsapp.com
-Icon=/home/asherah/.local/share/applications/icons/whatsapp.png
+Exec=chromium --profile-directory=Default --app=https://web.whatsapp.com
+Icon=/home/lilith/.local/share/applications/icons/whatsapp.png
 

@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=ChatGPT
-Exec=google-chrome-stable --profile-directory=Default --app=https://chatgpt.com
-Icon=/home/asherah/.local/share/applications/icons/chatgpt.png
+Exec=chromium --profile-directory=Default --app=https://chatgpt.com
+Icon=/home/lilith/.local/share/applications/icons/chatgpt.png
 

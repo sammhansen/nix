@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Leetcode
-Exec=google-chrome-stable --profile-directory=Default --app=https://leetcode.com
-Icon=/home/asherah/.local/share/applications/icons/leetcode.svg
+Exec=chromium --profile-directory=Default --app=https://leetcode.com
+Icon=/home/lilith/.local/share/applications/icons/leetcode.svg
 
