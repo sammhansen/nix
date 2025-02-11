@@ -1,8 +1,11 @@
 {
   lib,
+  self,
   pkgs,
+  osConfig,
   ...
 }: let
+  inherit (lib.modules) mkIf;
   inherit (lib.lists) optionals concatLists;
   inherit (lib.strings) concatMapStrings enableFeature;
 in {
@@ -19,7 +22,7 @@ in {
       "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
     ];
 
-    package = pkgs.chromium {
+    package = pkgs.chromium.override {
       enableWideVine = true;
 
       # https://github.com/secureblue/hardened-chromium
@@ -40,10 +43,10 @@ in {
         ]
 
         # Wayland
-        (optionals [
+        [
           "--ozone-platform=wayland"
           "--enable-features=UseOzonePlatform"
-        ])
+        ]
 
         # Etc
         [
