@@ -1,7 +1,7 @@
 {config, ...}: {
   nix = {
     # we can disable channels since we can just use the flake
-    channel.enable = false;
+    channel.enable = true;
 
     # we need to have nixpkgs in our path
     nixPath = ["nixpkgs=${config.nix.registry.nixpkgs.to.path}"];
@@ -36,5 +36,14 @@
         "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       ];
     };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
+
+  # for electron app to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
