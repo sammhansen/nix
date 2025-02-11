@@ -1,7 +1,8 @@
 {
   imports = [
     ./hyprland.nix
-    ./gnome.nix
     # ./niri.nix
+    ./gnome.nix
+    # ./cosmic.nix
   ];
 }
