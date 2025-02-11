@@ -34,18 +34,6 @@
     ags = {
       url = "github:Aylur/ags";
     };
-
-    cosmic = {
-      type = "github";
-      owner = "lilyinstarlight";
-      repo = "nixos-cosmic";
-
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "";
-        flake-compat.follows = "";
-      };
-    };
   };
 
   outputs = {
