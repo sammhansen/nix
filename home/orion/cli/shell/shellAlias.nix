@@ -43,6 +43,9 @@ in {
     nixos-gens = "sudo nix-env --list-generations --profile ${nixprofile_path}";
     nixos-gens-rm = "sudo nix-env --profile ${nixprofile_path} --delete-generations";
 
+    "rb" = "systemctl reboot";
+    "sdn" = "shutdown now";
+
     font-list = "fc-list : family | fzf | tr -d '\\n'";
     "mkdir" = "mkdir -pv";
   };
