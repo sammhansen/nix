@@ -5,7 +5,6 @@
     ./desktop/default.nix
     ./chaos/default.nix
     ./packages.nix
-    ./extra.nix
     ./virtualization/default.nix
   ];
 }
