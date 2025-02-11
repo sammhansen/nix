@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # temperature target on battery
   services.undervolt = {
-    enable = false;
+    enable = true;
     tempBat = 65; # deg C
     package = pkgs.undervolt;
   };
