@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland.settings = {
     windowrule = [
       "noblur,.*" # Disables blur for windows. Substantially improves performance.
-      # "opacity 0.89 override 0.93 override, .*" # Applies transparency to EVERY WINDOW
+      "opacity 0.89 override 0.93 override, .*" # Applies transparency to EVERY WINDOW
       "float, ^(steam)$"
       "float, polkit-gnome-authentication-agent-1"
       "size 300 300, polkit-gnome-authentication-agent-1"
