@@ -6,6 +6,8 @@
       repeat_delay = 250;
       repeat_rate = 35;
 
+      accel_profile = "flat"; # required for hints
+
       touchpad = {
         natural_scroll = true;
         disable_while_typing = true;
