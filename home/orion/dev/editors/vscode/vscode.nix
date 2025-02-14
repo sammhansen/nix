@@ -1,4 +1,14 @@
-{pkgs, ...}: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  mkLink = config.lib.file.mkOutOfStoreSymlink;
+
+  keybinds = mkLink "./keybindings.json";
+  settings = mkLink "./settings.json";
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -29,7 +39,6 @@
       mkhl.direnv
 
       ## RUST
-      serayuzgur.crates
       rust-lang.rust-analyzer
 
       ## GO
@@ -55,5 +64,10 @@
       unifiedjs.vscode-mdx
       valentjn.vscode-ltex
     ];
+  };
+
+  xdg.configFile = {
+    "VSCode/User/keybindings.json".source = keybinds;
+    "VSCode/User/settings.json".source = settings;
   };
 }
