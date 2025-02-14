@@ -45,7 +45,6 @@
     nixpkgs,
     nixpkgs-stable,
     stylix,
-    cosmic,
     home-manager,
     ...
   } @ inputs: let
