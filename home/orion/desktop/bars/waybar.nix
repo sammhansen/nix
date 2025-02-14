@@ -127,6 +127,8 @@
 
     style = let
       custom = {
+        font_name = "SpaceMono Nerd Font";
+        font_size = "13";
         font_weight = "bold";
         text_color = "#cdd6f4";
         secondary_accent = "#89b4fa";
@@ -141,7 +143,7 @@
           padding: 0;
           margin: 0;
           min-height: 0px;
-          font-family: ${font.name};
+          font-family: ${custom.font_name};
           font-weight: ${custom.font_weight};
           opacity: ${custom.opacity};
       }
@@ -151,7 +153,7 @@
       }
 
       #workspaces {
-          font-size: ${font.size}px;
+          font-size: ${custom.font_size}px;
           padding-left: 15px;
       }
       #workspaces button {
@@ -167,7 +169,7 @@
       }
 
       #tray, #wireplumber, #network, #cpu, #custom-temperature, #disk, #clock {
-          font-size: ${font.size}px;
+          font-size: ${custom.font_size}px;
           color: ${custom.text_color};
       }
 
@@ -178,7 +180,7 @@
       }
 
       #wireplumber {
-          font-size: ${font.size}px;
+          font-size: ${custom.font_size}px;
           padding-left: 15px;
           padding-right: 9px;
           margin-left: 7px;
