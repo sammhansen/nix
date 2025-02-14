@@ -20,7 +20,7 @@
     bun
     cargo
     #typescript
-    eslint
+    # eslint
 
     curl
     wget
