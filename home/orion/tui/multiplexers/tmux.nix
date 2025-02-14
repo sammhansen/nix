@@ -45,49 +45,6 @@
     '';
   in "#[reverse,fg=${accent}] ${format} #(${icon}) ";
 
-  battery = let
-    percentage = pkgs.writeShellScript "percentage" (
-      if pkgs.stdenv.isDarwin
-      then ''
-        echo $(pmset -g batt | grep -o "[0-9]\+%" | tr '%' ' ')
-      ''
-      else ''
-        path="/org/freedesktop/UPower/devices/DisplayDevice"
-        echo $(${pkgs.upower}/bin/upower -i $path | grep -o "[0-9]\+%" | tr '%' ' ')
-      ''
-    );
-    state = pkgs.writeShellScript "state" (
-      if pkgs.stdenv.isDarwin
-      then ''
-        echo $(pmset -g batt | awk '{print $4}')
-      ''
-      else ''
-        path="/org/freedesktop/UPower/devices/DisplayDevice"
-        echo $(${pkgs.upower}/bin/upower -i $path | grep state | awk '{print $2}')
-      ''
-    );
-    icon = pkgs.writeShellScript "icon" ''
-      percentage=$(${percentage})
-      state=$(${state})
-      if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "󰂄"
-      elif [ $percentage -ge 75 ]; then echo "󱊣"
-      elif [ $percentage -ge 50 ]; then echo "󱊢"
-      elif [ $percentage -ge 20 ]; then echo "󱊡"
-      elif [ $percentage -ge 0  ]; then echo "󰂎"
-      fi
-    '';
-    color = pkgs.writeShellScript "color" ''
-      percentage=$(${percentage})
-      state=$(${state})
-      if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "green"
-      elif [ $percentage -ge 75 ]; then echo "green"
-      elif [ $percentage -ge 50 ]; then echo "${fg2}"
-      elif [ $percentage -ge 20 ]; then echo "yellow"
-      elif [ $percentage -ge 0  ]; then echo "red"
-      fi
-    '';
-  in "#[fg=#(${color})]#(${icon}) #[fg=${fg}]#(${percentage})%";
-
   pwd = let
     accent = color "main_accent";
     icon = "#[fg=${accent}] ";
@@ -110,6 +67,7 @@ in {
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       yank
+      tmux-floax
     ];
     prefix = "M-t";
     baseIndex = 1;
@@ -127,6 +85,13 @@ in {
       bind v split-window -v -c "#{pane_current_path}"
       bind h split-window -h -c "#{pane_current_path}"
 
+      set -g @floax-width '80%'
+      set -g @floax-height '80%'
+      set -g @floax-border-color 'magenta'
+      set -g @floax-text-color 'blue'
+      set -g @floax-bind 'p'
+      set -g @floax-change-path 'true'
+
       set-option -g default-terminal "screen-256color"
       set-option -g status-right-length 100
       set-option -g @indicator_color "yellow"
@@ -136,7 +101,7 @@ in {
       set-option -g pane-border-style fg=black
       set-option -g status-style "bg=${bg} fg=${fg}"
       set-option -g status-left "${indicator}"
-      set-option -g status-right "${git} ${pwd} ${separator} ${battery} ${time}"
+      set-option -g status-right "${git} ${pwd} ${separator} ${time}"
       set-option -g window-status-current-format "${current_window}"
       set-option -g window-status-format "${window_status}"
       set-option -g window-status-separator ""
