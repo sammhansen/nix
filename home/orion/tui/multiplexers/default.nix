@@ -1,6 +1,6 @@
 {
   imports = [
     # ./zellij.nix
-    # ./tmux.nix
+    ./tmux.nix
   ];
 }
