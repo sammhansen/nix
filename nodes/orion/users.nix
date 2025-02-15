@@ -37,6 +37,7 @@ in {
       dialout = {};
       fingerprint = {};
       plugdev = {};
+      ydotool = {};
     };
 
     defaultUserShell = pkgs.bash;
