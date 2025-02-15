@@ -116,7 +116,7 @@ in {
       "SUPER, V, exec, ${clipboard}/bin/rofi-clipboard.sh"
       "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-powermenu"
 
-      "Super, B, exec, chromium"
+      "Super, B, exec, zen"
       "Alt, C, exec, chromium --app='https://chatgpt.com'"
       "Alt, G, exec, chromium --app='https://gemini.google.com/app'"
 
