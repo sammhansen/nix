@@ -7,7 +7,7 @@
     ./starship.nix
     ./packages.nix
     ./direnv.nix
-    # ./hyfetch.nix
+    ./hyfetch.nix
     ./zoxide.nix
 
     ./shell/default.nix
