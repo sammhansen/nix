@@ -11,4 +11,4 @@
 > - HOST : Lenovo ThinkPad t460s
 > - GPU: SkyLake Intel HD Graphics 520
 
-![image](https://github.com/user-attachments/assets/5c1e701e-a4cf-4361-9ac3-0ccdf0298127)
+![image](https://github.com/user-attachments/assets/80c34d83-3a02-44f0-ae9a-efb4d8543933)
