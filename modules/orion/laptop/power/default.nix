@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./auto-cpufreq.nix
+    ./auto-cpufreq.nix
     # ./upower.nix
     # ./undervolt.nix
     # ./acpid.nix
