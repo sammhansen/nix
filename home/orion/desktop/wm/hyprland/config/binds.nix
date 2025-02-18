@@ -104,8 +104,8 @@ in {
       ",XF86Search, exec, blueberry"
 
       # Apps
-      "SUPER, TAB, exec, uwsm app -- wezterm"
-      "SUPER, T, exec, uwsm app -- foot"
+      "SUPER, TAB, exec, uwsm app -- foot"
+      "SUPER, T, exec, uwsm app -- wezterm"
       "SUPER , E, exec, uwsm app -- nautilus --new-window"
       "SUPER, D, exec, ~/.config/hypr/dmenu.sh"
       "SUPER, PERIOD, exec, uwsm app -- ${pkgs.smile}/bin/smile"
@@ -116,9 +116,12 @@ in {
       "SUPER, V, exec, ${clipboard}/bin/rofi-clipboard.sh"
       "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-powermenu"
 
-      "Super, B, exec, zen"
+      "Super, B, exec, chromium"
       "Alt, C, exec, chromium --app='https://chatgpt.com'"
       "Alt, G, exec, chromium --app='https://gemini.google.com/app'"
+
+      "Alt, D, exec, hints"
+      "Alt, F, exec, hints --mode scroll"
 
       "Super, F, fullscreen, 0"
       "Super, D, fullscreen, 1"
