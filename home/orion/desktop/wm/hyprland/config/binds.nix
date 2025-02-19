@@ -111,12 +111,14 @@ in {
       "SUPER, PERIOD, exec, uwsm app -- ${pkgs.smile}/bin/smile"
       "ALT, S, exec, ${hyprshot}/bin/hyprshot.sh"
 
+      "ALT, F, exec, hints"
+
       # Rofi
       "SUPER, A , exec,  rofi -show drun -show-icons -run-command 'uwsm app -- {cmd}' -theme ~/.config/rofi/themes/default.rasi"
       "SUPER, V, exec, ${clipboard}/bin/rofi-clipboard.sh"
       "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-powermenu"
 
-      "Super, B, exec, chromium"
+      "Super, B, exec, firefox"
       "Alt, C, exec, chromium --app='https://chatgpt.com'"
       "Alt, G, exec, chromium --app='https://gemini.google.com/app'"
 

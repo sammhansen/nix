@@ -22,6 +22,7 @@
     #typescript
     # eslint
 
+    shadps4
     curl
     wget
     glib

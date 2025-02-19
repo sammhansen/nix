@@ -35,12 +35,6 @@
     "del" = "gio trash";
     "dev" = "nix develop -c nvim";
   };
-
-  completionDir = pkgs.bash-completion + "/etc/bash_completion.d";
-
-  completionScripts = builtins.attrNames (builtins.readDir completionDir);
-
-  completionSource = builtins.foldl' (prev: script: "${prev}\nsource ${completionDir}/${script}") "" completionScripts;
 in {
   options.shellAliases = with lib;
     mkOption {
@@ -157,7 +151,6 @@ in {
       # alias pueue = ${pkgs.pueue}/bin/pueue
       # alias pueued = ${pkgs.pueue}/bin/pueued
       # use ${pkgs.nu_scripts}/share/nu_scripts/modules/background_task/task.nu
-      source ${pkgs.nu_scripts}/share/nu_scripts/modules/formats/from-env.nu
 
       const path = "~/.nushellrc.nu"
       const null = "/dev/null"

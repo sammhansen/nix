@@ -21,5 +21,10 @@
     cursor = {
       no_hardware_cursors = true;
     };
+
+    device = {
+      name = "ydotoold-virtual-device-1";
+      accel_profile = "flat";
+    };
   };
 }

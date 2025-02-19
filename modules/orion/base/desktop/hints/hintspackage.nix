@@ -16,8 +16,8 @@ python3.pkgs.buildPythonApplication {
   src = fetchFromGitHub {
     owner = "AlfredoSequeida";
     repo = "hints";
-    rev = "28bdbc1ef6d4df654a20a481a6429da07dccecc9";
-    hash = "sha256-rbYfRlH8Sgz7g1IV6duaMym06mxHBHaySNjs6bLs1so=";
+    rev = "config/manual-window-system";
+    sha256 = "sha256-pWP8XVrFpzZ3xhLvsrerOyBMX0qx6v4DWahXTahqUZY";
   };
 
   disabled = python3.pkgs.pythonOlder "3.10";
