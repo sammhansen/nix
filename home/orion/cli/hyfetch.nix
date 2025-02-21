@@ -1,10 +1,14 @@
-{inputs, ...}: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    fastfetch
+  ];
+
   programs.hyfetch = {
     enable = true;
-    package = inputs'.beapkgs.packages.hyfetch;
+    package = pkgs.hyfetch;
 
     settings = {
-      preset = "lesbian";
+      preset = "transgender";
       mode = "rgb";
       light_dark = "dark";
       lightness = 0.56;
@@ -17,61 +21,6 @@
       distro = "nixos";
       pride_month_shown = [];
       pride_month_disable = true;
-    };
-
-    fastfetchConfig = {
-      logo = {
-        type = "small";
-        padding.top = 1;
-      };
-      display.separator = " ";
-      modules = [
-        {
-          key = "╭───────────╮";
-          type = "custom";
-        }
-        {
-          key = "│ {#35} kernel  {#keys}│";
-          type = "kernel";
-        }
-        {
-          key = "│ {#34}{icon} distro  {#keys}│";
-          type = "os";
-        }
-        {
-          key = "│ {#36} wm      {#keys}│";
-          type = "de";
-        }
-        {
-          key = "│ {#32} shell   {#keys}│";
-          type = "shell";
-        }
-        {
-          key = "│ {#31} term    {#keys}│";
-          type = "terminal";
-        }
-        {
-          key = "│ {#35}󰍛 memory  {#keys}│";
-          type = "memory";
-        }
-        {
-          key = "│ {#33}󰔛 uptime  {#keys}│";
-          type = "uptime";
-        }
-        {
-          key = "├───────────┤";
-          type = "custom";
-        }
-        {
-          key = "│ {#39} colors  {#keys}│";
-          type = "colors";
-          symbol = "circle";
-        }
-        {
-          key = "╰───────────╯";
-          type = "custom";
-        }
-      ];
     };
   };
 }

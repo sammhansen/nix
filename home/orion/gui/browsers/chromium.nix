@@ -1,25 +1,27 @@
 {
   lib,
-  self,
   pkgs,
-  osConfig,
   ...
 }: let
-  inherit (lib.modules) mkIf;
-  inherit (lib.lists) optionals concatLists;
+  inherit (lib.lists) concatLists;
   inherit (lib.strings) concatMapStrings enableFeature;
 in {
   programs.chromium = {
     enable = true;
     extensions = [
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-      "clngdbkpkpeebahjckkjfobafhncgmne" # stylus
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
       "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
-      "jghecgabfgfdldnmbfkhmffcabddioke" # Volume Master
       "emffkefkbkpkgpdeeooapgaicgmcbolj" # Wikiwand
-      "ngonfifpkpeefnhelnfdkficaiihklid" # ProtonDB
-      "dnhpnfgdlenaccegplpojghhmaamnnfp" # Augmented Steam
+      "mmpljcghnbpkokhbkmfdmoagllopfmlm" # Allow copy & enable right click
+      "ccjfggejcoobknjolglgmfhoeneafhhm" # ChatGPT to pdf
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark reader
+      "gcknhkkoolaabfmlnjonogaaifnjlfnp" # Foxyproxy
+      "mljepckcnbghmcdmaebjhejiplcngbkm" # Hide scrollbar
+      "gabfmnliflodkdafenbcpjdlppllnemd" # save image as
+      "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
+      "kapjaoifikajdcdehfdlmojlepfpkpoe" # squarex
+      "gppongmhjkpfnbhagpmjfkannfbllamg" # wappalyzer
     ];
 
     package = pkgs.chromium.override {

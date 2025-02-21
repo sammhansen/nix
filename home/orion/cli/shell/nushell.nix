@@ -7,15 +7,14 @@
   aliases = {
     "db" = "distrobox";
     "kali" = "distrobox enter kalignome -- /snap/bin/nu";
-    "dbinit" = "distrobox create --name atlantis -i docker.io/kalilinux/kali-rolling:latest --init";
     "tree" = "eza --tree";
     "v" = "nvim";
     "cat" = "bat";
-    "ns" = "sudo nixos-rebuild switch --flake .#atlantis";
+    "ns" = "sudo nixos-rebuild switch --flake .#nix";
+    "hs" = "home-manager switch -b backup --flake .#asherah";
 
     "la" = "ls -la";
     "l" = "ls";
-    "tk" = "tmux kill-server";
 
     ":q" = "exit";
     "q" = "exit";
@@ -35,8 +34,6 @@
 
     "del" = "gio trash";
     "dev" = "nix develop -c nvim";
-    "nd" = "nix develop";
-    "nsh" = "nix-shell shell.nix";
   };
 in {
   options.shellAliases = with lib;
@@ -147,16 +144,13 @@ in {
           (map completion names);
     in ''
       $env.config = ${conf};
-      ${completions ["cargo" "git" "nix" "npm" "poetry" "curl"]}
+      ${completions ["cargo" "git" "nix" "npm" "curl"]}
 
-      zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
-
-      source ~/.zoxide.nu
+      mkdir ($nu.data-dir | path join "vendor/autoload")
 
       # alias pueue = ${pkgs.pueue}/bin/pueue
       # alias pueued = ${pkgs.pueue}/bin/pueued
       # use ${pkgs.nu_scripts}/share/nu_scripts/modules/background_task/task.nu
-      source ${pkgs.nu_scripts}/share/nu_scripts/modules/formats/from-env.nu
 
       const path = "~/.nushellrc.nu"
       const null = "/dev/null"

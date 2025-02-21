@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
-    image = ../../../../../../.config/wallpapers/Messy-Room.jpg;
+    image = ../../../../../../.config/wallpapers/Manga-Portal.png;
     base16Scheme = ./themes/catppuccin-mocha/catppuccin-mocha.yaml;
     polarity = "dark";
     opacity.terminal = 0.8;

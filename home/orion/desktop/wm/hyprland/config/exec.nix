@@ -1,7 +1,7 @@
 {...}: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "uwsm app -- ags run &"
+      "uwsm app -- ags run --gtk4 &"
       "uwsm app -- nm-applet &"
       "uwsm app -- wl-paste --type text --watch cliphist store &"
       "uwsm app -- wl-paste --type image --watch cliphist store &"

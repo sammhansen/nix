@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser.url = "github:whoslucifer/zen-browser-flake";
 
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";

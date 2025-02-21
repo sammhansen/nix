@@ -24,7 +24,8 @@
         fzf
         libgtop
         gtksourceview
-        webkitgtk_6_0
+        # webkitgtk
+        webkitgtk_4_0
         accountsservice
       ]
       ++ (map (component: inputs.ags.packages.${pkgs.system}.${component}) [

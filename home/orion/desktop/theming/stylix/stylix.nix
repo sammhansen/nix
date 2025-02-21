@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
-    image = ../../../../../.config/wallpapers/Messy-Room.jpg;
+    image = ../../../../../.config/wallpapers/Manga-Portal.png;
     base16Scheme = ./themes/catppuccin-mocha/catppuccin-mocha.yaml;
     polarity = "dark";
     targets = {
@@ -15,6 +15,8 @@
       nushell.enable = true;
       fish.enable = true;
       vesktop.enable = true;
+      vscode.enable = false;
+      wezterm.enable = true;
     };
     opacity.terminal = 0.8;
     fonts = {

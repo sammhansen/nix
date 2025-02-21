@@ -5,6 +5,10 @@
     gh-dash
     jq
 
+    easyeffects
+
+    bitwarden-desktop
+
     nix-prefetch-git
 
     xdg-user-dirs
@@ -20,11 +24,11 @@
     slurp
     wf-recorder
 
-    btop
+    # btop
     eza
     carapace
-    zoxide
-    delta
+    # zoxide
+    # delta
     bat
     fzf
     ripgrep
@@ -33,7 +37,7 @@
     unzip
 
     glib
-    ydotool
+    # ydotool
     file
 
     ani-cli
@@ -44,9 +48,7 @@
     telegram-desktop
     discord
     element-desktop
-    irssi
 
-    chess-tui
     youtube-music
 
     (mpv.override {scripts = [mpvScripts.mpris];})

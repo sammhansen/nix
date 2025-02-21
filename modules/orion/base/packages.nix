@@ -20,8 +20,9 @@
     bun
     cargo
     #typescript
-    eslint
+    # eslint
 
+    shadps4
     curl
     wget
     glib

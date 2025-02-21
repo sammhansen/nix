@@ -12,8 +12,8 @@ in {
       package = pkgs.bibata-cursors;
     };
     iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     gtk3.bookmarks = [

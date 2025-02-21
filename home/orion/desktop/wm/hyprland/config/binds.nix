@@ -105,20 +105,25 @@ in {
 
       # Apps
       "SUPER, TAB, exec, uwsm app -- foot"
-      "SUPER, T, exec, uwsm app --ghostty"
+      "SUPER, T, exec, uwsm app -- wezterm"
       "SUPER , E, exec, uwsm app -- nautilus --new-window"
       "SUPER, D, exec, ~/.config/hypr/dmenu.sh"
       "SUPER, PERIOD, exec, uwsm app -- ${pkgs.smile}/bin/smile"
       "ALT, S, exec, ${hyprshot}/bin/hyprshot.sh"
+
+      "ALT, F, exec, hints"
 
       # Rofi
       "SUPER, A , exec,  rofi -show drun -show-icons -run-command 'uwsm app -- {cmd}' -theme ~/.config/rofi/themes/default.rasi"
       "SUPER, V, exec, ${clipboard}/bin/rofi-clipboard.sh"
       "SUPER, W , exec, ${pkgs.rofi-power-menu}/bin/rofi-powermenu"
 
-      "Super, B, exec, zen"
+      "Super, B, exec, firefox"
       "Alt, C, exec, chromium --app='https://chatgpt.com'"
       "Alt, G, exec, chromium --app='https://gemini.google.com/app'"
+
+      "Alt, D, exec, hints"
+      "Alt, F, exec, hints --mode scroll"
 
       "Super, F, fullscreen, 0"
       "Super, D, fullscreen, 1"

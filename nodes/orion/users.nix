@@ -10,7 +10,7 @@ in {
       homeMode = "755";
       isNormalUser = true;
       description = "${gitUsername}";
-      shell = pkgs.fish;
+      shell = pkgs.bash;
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -25,6 +25,7 @@ in {
         "dialout"
         "fingerprint"
         "plugdev"
+        "ydotool" #require for hints
       ];
     };
 
@@ -36,12 +37,14 @@ in {
       dialout = {};
       fingerprint = {};
       plugdev = {};
+      ydotool = {};
     };
 
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.bash;
   };
 
   environment.shells = with pkgs; [
+    bash
     fish
     nushell
   ];
