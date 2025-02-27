@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./orion/default.nix
+    ./default.nix
   ];
 
   home.username = "lilith";

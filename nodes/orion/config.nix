@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./default.nix
-    ../../modules/orion/default.nix
+    ../../modules/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

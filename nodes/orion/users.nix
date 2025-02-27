@@ -25,6 +25,7 @@ in {
         "dialout"
         "fingerprint"
         "plugdev"
+        "kvm"
         "ydotool" #require for hints
       ];
     };

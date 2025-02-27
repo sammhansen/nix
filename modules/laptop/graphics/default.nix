@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./intel-drivers.nix
+  ];
+}
